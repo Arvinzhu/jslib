@@ -35,7 +35,7 @@ function deepClone(parent){
         if (parent.lastIndex) child.lastIndex = parent.lastIndex;
         return child;
       case 'Symbol':
-        return Symbol(Symbol.keyFor(parent).toString());
+        return  Symbol(String(parent).slice(7,-1));
       case 'Array'||'Object':
         flag = type;
         if(type === 'Object'){
